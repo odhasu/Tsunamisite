@@ -6,15 +6,10 @@
 const versions = [
   { mc: "1.21.11", label: "Latest", isLatest: true },
   { mc: "1.21.10", label: "Stable" },
-  { mc: "1.21.9",  label: "Stable" },
-  { mc: "1.21.8",  label: "Stable" },
-  { mc: "1.21.7",  label: "Stable" },
-  { mc: "1.21.6",  label: "Stable" },
-  { mc: "1.21.5",  label: "Stable" },
-  { mc: "1.21.4",  label: "Stable" },
-  { mc: "1.21.3",  label: "Stable" },
-  { mc: "1.21.2",  label: "Stable" },
-  { mc: "1.21",    label: "Stable" },
+  { mc: "1.21.5", label: "Stable" },
+  { mc: "1.21.4", label: "Stable" },
+  { mc: "1.21.1", label: "Stable" },
+  { mc: "1.21", label: "Stable" },
 ];
 
 function openModal() {
@@ -28,12 +23,12 @@ function closeModal() {
 }
 
 // Close modal clicking outside
-document.getElementById("versionModal").addEventListener("click", function(e) {
+document.getElementById("versionModal").addEventListener("click", function (e) {
   if (e.target === this) closeModal();
 });
 
 // Close modal on Escape key
-document.addEventListener("keydown", function(e) {
+document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") closeModal();
 });
 
@@ -135,7 +130,7 @@ function renderFeatures(filter) {
   const filtered = filter === "all" ? features : features.filter(f => f.category === filter);
   grid.innerHTML = filtered.map(f => `
     <div class="feature-card" data-cat="${f.category}">
-      <span class="feature-badge">ADDED</span>
+      <span class="feature-badge">Module</span>
       <h4>${f.name}</h4>
       <p>${f.desc}</p>
     </div>
